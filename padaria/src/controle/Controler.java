@@ -3,6 +3,7 @@ package controle;
 import java.io.IOException;
 import java.util.ArrayList;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -41,14 +42,9 @@ public class Controler extends HttpServlet {
 			throws ServletException, IOException {
 		// Criando objeto p receber javaBeans
 		ArrayList<JavaBeans>lista = dao.listarCadastro(); 
-		// teste
-		for (int i = 0; i < lista.size(); i++) {
-			System.out.println(lista.get(i).getIdcon());
-			System.out.println(lista.get(i).getNome());
-			System.out.println(lista.get(i).getDescricao());
-			System.out.println(lista.get(i).getPreco());			
-			
-		} // fim do for	
+		request.setAttribute("contatos", lista);
+		RequestDispatcher rd = request.getRequestDispatcher("pao.jsp");
+		rd.forward(request, response);// leva obj lista ao pao.jsp
 }
 	
 	// novo cadastro
