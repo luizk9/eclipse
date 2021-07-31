@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="utf-8">
+<title>Pão amigo e Cia here</title>
+<link rel="icon" href="imagens/p3.png">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+	<h1>Criar novo Cadastro</h1>
+	<form name="frmContato" action="controleFormnovo">
+		<table>
+			<tr>		
+		       <th><input type="text" name="nome" placeholder="Nome" class="Caixa1"></th>
+	    	</tr>
+	    	<tr>
+		       <th><input type="text" name="descricao" placeholder="Descrição" class="Caixa1"></th>	
+	    	</tr>
+	    	<tr>			 		  
+			  <th><input type="text" name="preco" placeholder="Preço" class="Caixa2"></th>
+		    </tr>
+		</table>
+		<input type="button" value="Adicionar" class="Botao1" onclick="validar()">
+	</form>
+	<script src="scripts/validador.js"></script>
+
+</body>
+</html>
