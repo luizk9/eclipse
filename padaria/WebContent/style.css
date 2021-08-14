@@ -5,13 +5,14 @@ body {
 	background-color: #d7ffd7;
 	font-family: 'Open Sans', sans-serif;
 	font-size: 1em;
-	font-weight: 400;
-	
+	font-weight: 960;
+	display:inline-block;
+	width:100%; 
 }
 
  h1 {
  	color: #66bbff;
- }
+}
  
  .Botao1{
  	text-decoration: nome;
@@ -23,20 +24,102 @@ body {
  	border-radius: 5px;
  	border:0;
  	cursor:pointer;
-  }
+ }
+ 
+ .Botao2{
+ 	text-decoration: nome;
+ 	background-color: red;
+ 	padding: 5px 10px 5px 10px;
+ 	color:#fff;
+ 	font-size: 1.2em;
+ 	font-weight: 700;
+ 	border-radius: 5px;
+ 	border:0;
+ 	cursor:pointer;
+ }
+ 
+ 
+ .img1{
+ 	margin-top: 30px;
+ 	width: 195;
+	height: 150;
+	margin-left: 50%;
+}
+ .img2{
+ 	margin-top: -40px;
+ 	width: 22%;
+	height: 20%;
+	right: 10%;
+}
+
   .Caixa1{
   		width:320px;
   		padding: 5ps;
   		margin-bottom: 10px;
   		border: 1px solid #60bbff;
   		border-radius: 5px;  		
- }
+}
  .Caixa2 {
   	padding: 5px;
   	margin-bottom: 10px;
   	border: 1px solid #60bbff;
   	border-radius: 5px;  		
+ }
+ #caixa3 {
+  	padding: 5px;
+  	margin-bottom: 10px;
+  	border: 1px solid #ff0000;
+  			
+ }
+ 
+ 
+   #tab2{
+  	margin-top: 30px;
+  }
+  #tabela{
+  	margin-top: 30px;
+  	margin-left:30px;
+ 
+ }
+ 
+ 
+
+   #tabela th{
+  	border: 2px solid #ddd;
+  	padding: 10px;
+  	text-align: leff;
+  	background-color: #66bbff; 
+  	color: #fff; 
+ }
+  
+  #tabela td {
+   	border: 1px solid #ddd;
+  	padding: 10px; 
+  	text-align: center; 	  
   }
   
-
-
+  .corpo{
+  	margin-top: 50px;
+  	width:100%; 
+  	margin-top: 10%;
+    }
+  
+  .conteudo{
+  	display:table-cell;
+  	width:96%; 
+	float: left;
+	
+  }
+  .texto{
+  		display:table-cell;
+  		float:left;
+  		width:30%;
+  		margin-left: 40px;
+  }
+  .bloco{
+  		display:table-cell;
+  		float:left;
+  		width:30%;
+  		margin-left:20px;
+  		font-size:25px;
+    }

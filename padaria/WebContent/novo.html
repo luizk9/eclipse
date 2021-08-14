@@ -6,23 +6,55 @@
 <link rel="icon" href="imagens/p3.png">
 <link rel="stylesheet" href="style.css">
 </head>
-<body>
+
 	<h1>Criar novo Cadastro</h1>
-	<form name="frmContato" action="controleFormnovo">
+	  <form name="frmContato" action="controleFormnovo">
 		<table>
 			<tr>		
-		       <th><input type="text" name="nome" placeholder="Nome" class="Caixa1"></th>
+		       <td><input type="text" name="nome" placeholder="Nome" class="Caixa1"></td>
 	    	</tr>
 	    	<tr>
-		       <th><input type="text" name="descricao" placeholder="Descrição" class="Caixa1"></th>	
+		       <td><input type="text" name="descricao" placeholder="Descrição" class="Caixa1"></td>	
 	    	</tr>
 	    	<tr>			 		  
-			  <th><input type="text" name="preco" placeholder="Preço" class="Caixa2"></th>
+			  <td><input type="text" name="preco" placeholder="Preço R$: Ex: R$ 12.50" class="Caixa2"></td>
 		    </tr>
+		   
 		</table>
-		<input type="button" value="Adicionar" class="Botao1" onclick="validar()">
+			<input type="button" value="Adicionar" class="Botao1" onclick="validar()">		
 	</form>
+			
 	<script src="scripts/validador.js"></script>
-
-</body>
+						
+			<div align="center">
+			  <h1> CADASTRAR IMAGEM</h1>
+			  <Form method="Post" action="" enctype="multipart/form-data">
+				<input type="file" name="imagem" id="imagem" onchange=previewImagem() ><br><br>
+				<img style="width:150px; height:150px;">
+				<input type="submit" name="cadastrar"  id="cadastrar" value="Cadastrar">	
+				<img src="imagens/batman.gif"  margim-right= 50px; width=150px; height=150px; >
+			  </Form>			
+				<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+				<script>
+					function previewImagem(){
+						var imagem = document.querySelector('input[name=imagem]').files[0];
+						var preview = document.querySelector('img');
+						
+						var reader = new FileReader();
+						reader.onloadend = function(){
+							preview.src = reader.result;
+							cadastrar.src = fileReader.result;
+						}						
+						if(imagem){							
+							reader.readAsDataURL(imagem);	
+														
+						}else{
+							preview.src="";
+						}
+						
+					}				
+				</script>
+			</div >	
+			<img src="imagens/3.jpg" class ="img1"  align="right"  height="150" margin-top= 100px>		
+	</body>
 </html>

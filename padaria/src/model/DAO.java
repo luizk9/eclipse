@@ -75,9 +75,30 @@ public class DAO {
 				
 			} catch (Exception e) {
 				System.out.println(e);
-				return null;
-				
-				
+				return null;			
 			}
 		}
+		/** CRUD -editando - UPDATA  - os dados **/
+		// selecionar o contato 
+		public void selecionarCadastro(JavaBeans cadastro) {
+			String read2 ="select * from tbcadastro where idcon = ?";
+			try { 
+				Connection con = conectar();
+				PreparedStatement pst = con.prepareStatement(read2);
+				pst.setString(1, cadastro.getIdcon());  // nesta estamos pegando o id 
+				ResultSet rs = pst.executeQuery();
+				// buscando - tirar  do bd
+				while(rs.next()) {					
+					cadastro.setIdcon(rs.getString(1));
+					cadastro.setNome(rs.getString(2));
+					cadastro.setDescricao(rs.getString(3));
+					cadastro.setPreco(rs.getString(4));																			
+				}//fim do while
+				con.close();			
+				
+			} catch (Exception e) {
+				System.out.println(e);				
+			}	
+		} // fim do método selecionarCadastro
+		
 }

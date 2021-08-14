@@ -4,16 +4,7 @@
      <%@ page import="java.util.ArrayList"%>
     <%
     	ArrayList<JavaBeans>lista= (ArrayList<JavaBeans>)
-    	request.getAttribute("contatos");
- 	// teste
- 		for (int i = 0; i < lista.size(); i++) {
- 			out.println(lista.get(i).getIdcon());
- 			out.println(lista.get(i).getNome());
- 			out.println(lista.get(i).getDescricao());
- 			out.println(lista.get(i).getPreco());			
- 			
- 		} // fim do for	
-    
+    	request.getAttribute("listarPao"); 	   
     %>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -24,7 +15,37 @@
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
-	<h1>Pão Cadastro e Preços</h1>
-	<a href="novo.html" class="Botao1"> Cadastro e Preço </a>
+		<div>	
+			<h1>Pão Cadastro e Preços</h1> 
+			<a href="novo.html" class="Botao1"> Novo Cadastro e Preço !!! </a> 
+		</div>							
+		<table id="tabela">
+			<thead class="a">
+				<tr>	<!-- cabeçalho da tabela -->					
+					<th> Idcon</th>
+					<th> Nome</th>
+					<th> Descrição</th>
+					<th> Preço R$</th>	
+					<!-- 1- o botão editar da tabela -->	
+					<th> Opção</th>	
+								
+				</tr>					
+			</thead>			
+			
+				<% for(int i = 0; i < lista.size(); i++){ %>
+					<tr>
+						<td><%=lista.get(i).getIdcon()%></td>
+						
+						<td><%=lista.get(i).getNome()%></td>
+						
+						<td><%=lista.get(i).getDescricao()%></td>
+						<!-- 2=colocando o botão EDITAR -->
+						<td><%=lista.get(i).getPreco()%></td>
+						<td><a href="select?idcon=<%=lista.get(i).getIdcon()%>" class="Botao">Editar</a></td>
+					</tr>
+				<% } %>
+		</table>	
+		<!-- imagem de brincadeira -->
+	<img src="imagens/batman.gif" class ="img1"  align="right"  height="200">
 </body>
 </html>
